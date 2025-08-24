@@ -1,17 +1,28 @@
-# py-portscanner
+# Python Port Scanner 🔍
 
-A fast, simple **TCP port scanner** in Python with optional banner grabbing. Great for learning networking and showcasing security tooling on your GitHub.
+A simple port scanner built with Python's `socket` library.  
+It allows you to check for open ports on a given host.
+
+⚠️ **Disclaimer**: This tool is for **educational purposes only**.  
+Do not use it on systems without explicit permission.
 
 ## Features
-- Scan single hosts or CIDR ranges
-- Port ranges and lists (e.g., `1-1024,80,443`)
-- Threaded scanning for speed
-- Optional banner grab
-- Save results to **JSON** or **CSV**
-- Pure standard library (no external deps)
+- Scan a target host for open ports
+- Lightweight and easy to use
+- Command-line interface
 
-## Quick start
+## Usage
 ```bash
-python3 portscanner.py -t scanme.nmap.org --common
-python3 portscanner.py -t 192.168.1.0/24 -p 1-1024 -T 300 -b -O results.json
-python3 portscanner.py -t example.com -p 80,443,8080 -b -o csv -O results.csv
+python portscanner.py <target-host> <start-port> <end-port>
+```
+
+Example:
+```bash
+python portscanner.py scanme.nmap.org 20 100
+```
+
+## Requirements
+- Python 3.x
+
+## License
+MIT License
